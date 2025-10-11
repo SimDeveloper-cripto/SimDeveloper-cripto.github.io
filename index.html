@@ -1,304 +1,183 @@
+<!-- TODO
+  - ADD SGX
+  - ADD ROS2 + GAZEBO
+  - ADD KALI-LINUX
+  - SOMETHING DONE WITH ANDROID
+  - SISTEMARE GLI ESAMI (TROPPO A CASO)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simone Catapano | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f4f6;
-            color: #4b5563;
-        }
-        header {
-            position: relative;
-            background-color: #4f46e5;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            border-bottom: 4px solid #a5b4fc;
-        }
-        .views {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-        }
-        .main-container {
-            display: flex;
-            max-width: 1000px;
-            margin: 15px auto;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .side-container, .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .side-container { 
-            width: 100%; 
-            min-width: 250px;
-        }
-        .container { 
-            width: 65%; 
-            min-width: 300px;
-            flex-grow: 1;
-        }
-        h1, h3 { text-align: center; }
-        .section { margin-bottom: 20px; }
-        a { text-decoration: none; color: #4f46e5; font-weight: bold; }
-        a:hover {
-            color: #a5b4fc;
-        }
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin: 15px 0;
-        }
-        .icons img { 
-            width: 40px; 
-            height: 40px;
-            transition: transform 0.2s, filter 0.3s ease;
-            filter: grayscale(30%);
-        }
-        .icons img:hover {
-            transform: scale(1.2);
-            filter: grayscale(0%);
-        }
-        .contact-icons img {
-            width: 24px;
-            height: 24px;
-            margin-right: 5px;
-        }
-        .contact-info p {
-            display: flex;
-            align-items: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #4f46e5;
-            color: #ffffff;
-            margin-top: 20px;
-        }
-        .skill-section {
-            margin-bottom: 25px;
-        }
-        .skill-section h3 {
-            border-bottom: 2px solid #4f46e5;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .learning-section p {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .learning-section img {
-            width: 20px;
-            height: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Simone Catapano | Portfolio </title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Hi 👋, I'm Simone Catapano</h1>
-        <h3>A passionate Computer Scientist from Italy.<br>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Hi 👋, I'm <span class="highlight"> Simone Catapano </span></h1>
+      <h3>A passionate Computer Scientist from Italy.<br>
         What I love the most are Embedded systems like Raspberry (ARM) and Arduino
-        <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="Arduino Logo" width="20" height="20">
-        </h3>
-        <div class="views">
-            <p><img align="right" src="https://komarev.com/ghpvc/?username=simdeveloper-cripto&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views"></p>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <div class="side-container">
-            <div class="section">
-                <h3>Contact & Information</h3>
-                <p><strong>University:</strong> University of Naples "Federico II"</p>
-                <p><strong>Degree 🎓:</strong> Bachelor's in Computer Science with a score of <strong>107/110</strong> </p>
-                <p>  </p>
-                <p>📧 <a href="mailto:catapano.smn.2001@gmail.com">catapano.smn.2001@gmail.com</a></p>
-                <p><a href="https://github.com/SimDeveloper-cripto" target="_blank">GitHub</a></p>
-
-                <p><strong>Experience:</strong> Former programmer in a CyberSecurity Company</p>
-                <p>
-                    At the moment I'm in the process of a Master's Degree in Computer Science, with specialization in AI and CyberSecurity.
-                </p>
-            </div>
-
-            <div class="section">
-                <h3>Download CV</h3>
-                <p><a href="/assets/CV_Simone_Catapano.pdf" download>Download PDF</a></p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-                <h3> About Me (Updates) </h3>
-                <p>💸 I'm currently working on <strong>Neural Networks</strong>! Links for more infos will be provided soon.</p>
-                <p>🔭 For personal reasons, I'm currently developing:
-                     a <a href="https://github.com/SimDeveloper-cripto/Embedded-Domotic-System.git" target="_blank">Personal Domotic System for my house</a>, using Arduino Uno R4 WiFi, 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspberry Pi 4B (8gb) and Python3.</p> <br>
-            </div>
-
-            <div class="section">
-                <h3> Main Projects </h3>
-                <p> <strong> [Python3 Library] <a href="https://github.com/SimDeveloper-cripto/graphlib.git" target="_blank"> graphlib</a></strong>, an Undirected Graph implemented by Adjacency Matrix. </p>
-                <p> <strong> [C++ Library] <a href="https://github.com/SimDeveloper-cripto/lasd_libraries_v2.git" target="_blank"> lasd_libraries_v2</a></strong>, containing: <br>    
-                    <ul>
-                        <li> A complete Directed Graph. </li>
-                        <li> A Fully-Connected Feed-Forward Neural Network trained on <strong> MNSIT </strong> (E-Mnist and Fashion-Mnist is a work in progess). </li>
-                        <li> [TODO] One day I'll build a Graph Neural Network based on what I've built. </li>
-                    </ul>
-                </p>
-                <p> <strong> [Python3 Library] <a href="https://github.com/SimDeveloper-cripto/neura_nova.git" target="_blank"> neura_nova </a> </strong>, a Neural Networks library containing FeedForward and Convolutional models trained for MNIST dataset </p>
-                    <ul>
-                        <li> K-Fold Cross Validation has been applied. </li>
-                        <li> Major focus on Dataset Shifting! </li>
-                    </ul>
-            </div>
-
-            <div class="learning-section section">
-                <h3> Currently Learning </h3>
-                <p><strong>Languages: </strong><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/zig/zig-original.svg" alt="zig"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp"></p>
-                <p><strong>Frameworks/Libraries:</strong></p>
-                <ul>
-                    <li><strong>React</strong> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="20" height="20"> and <strong> React-Native </strong></li>
-                    <li><strong>Go</strong>: Gorm, Echo, Fiber, Traefik</li>
-                    <li><strong>Python</strong>: <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg" alt="tensorflow" width="20" height="20"> Tensorflow
-                    <li><strong>C and Zig</strong>: OpenMP, MPI, Raylib, Raygui, OpenGL</li>
-                </ul>
-
-                <p><strong>Would Love to Learn:</strong> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" alt="opencv" width="20" height="20"> OpenCV </p>
-            </div>
-
-            <div class="skill-section">
-                <h3>Languages</h3>
-                <div class="icons">
-                    <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C">
-                    </a>
-                    <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">
-                    </a>
-                    <a href="https://www.python.org" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
-                    </a>
-                    <a href="https://www.java.com" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">
-                    </a>
-                    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
-                    </a>
-                    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
-                    </a>
-                    <a href="https://golang.org" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Go">
-                    </a>
-                    <!--
-                    <a href="https://ziglang.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/zig/zig-original.svg" alt="Zig">
-                    </a>
-                    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="C#">
-                    </a>
-                    -->
-                </div>
-            </div>
-
-            <div class="skill-section">
-                <h3>Frameworks</h3>
-                <div class="icons">
-                    <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
-                    </a>
-                    <a href="https://www.selenium.dev" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="Selenium">
-                    </a>
-                    <a href="https://spring.io/" target="_blank" rel="noreferrer">
-                        <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring">
-                    </a>
-                    <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js">
-                    </a>
-                    <a href="https://numpy.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy">
-                    </a>
-                    <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" alt="PyTorch">
-                    </a>
-                    <a href="https://matplotlib.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
-                    </a>
-                </div>
-            </div>
-
-            <div class="skill-section">
-                <h3>Tools</h3>
-                <div class="icons">
-                    <a href="https://www.arduino.cc/" target="_blank">
-                        <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="Arduino Logo" width="20" height="20">
-                    </a>
-                    <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
-                    </a>
-                    <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL">
-                    </a>
-                    <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android">
-                    </a>
-                    <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker">
-                    </a>
-                    <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-                        <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase">
-                    </a>
-                    <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
-                    </a>
-                </div>
-            </div>
-
-            <div class="skill-section">
-                <h3>Operating Systems</h3>
-                <div class="icons">
-                    <a href="https://www.microsoft.com/windows" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="Windows">
-                    </a>
-                    <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux">
-                    </a>
-                    <a href="https://www.debian.org/" target="_blank" rel="noreferrer">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/debian/debian-original.svg" alt="Debian">
-                    </a>
-                    <a href="https://ubuntu.com/" target="_blank" rel="noreferrer">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Ubuntu-logo-2022.svg" alt="Ubuntu">
-                    </a>
-                    <a href="https://linuxmint.com/" target="_blank" rel="noreferrer">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint">
-                    </a>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3>GitHub Stats</h3>
-                <p style="text-align: center;">
-                    <img src="https://github-readme-stats.vercel.app/api?username=simdeveloper-cripto&show_icons=true&locale=en" alt="GitHub Stats">
-                </p>
-            </div>
-        </div>
+        <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="Arduino Logo" width="22">
+      </h3>
+      <div class="views">
+        <img src="https://komarev.com/ghpvc/?username=simdeveloper-cripto&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views">
+      </div>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
     </div>
+  </header>
 
-    <footer>
-        <p> &copy; 2025 <strong> SimDeveloper-cripto </strong> - Simone Catapano. </p>
+  <!-- Main -->
+  <main class="main-container">
+    <!-- Sidebar -->
+    <aside class="side-container">
+      <section class="section">
+        <center><h3>Contact & Information</h3></center>
+        <p><strong>University:</strong> University of Naples "Federico II"</p>
+        <p><strong>Degree 🎓: </strong> Bachelor's in Computer Science <strong>(107/110)</strong></p>
+        <p><strong>Experience:</strong> <a href="https://www.trustup.it/projects"> TrustUp </a>, for CyberSecurity </p>
+        <br />
+
+        <p>
+            I'm currently pursuing a Master's degree in Computer Science, specializing in <strong> AI & CyberSecurity </strong>.
+            <br/> <u> Of all, my favorite exams are:</u> <br />
+                <center> <ul class="exams"> 
+                  <li> Encoding & Encryption </li>
+                  <li> Statistical Learning  </li>
+                  <li> Neural Networks       </li>
+                  <li> Methods for AI        </li>
+                  <li> Intelligent Robotics  </li>
+                  <li> Network Security      </li>
+                  <li> Computer Vision       </li>
+                </ul> </center>
+        </p>
+
+        <br/> <p>📧 <a href="mailto:catapano.smn.2001@gmail.com">catapano.smn.2001@gmail.com</a></p>
+        <p>🔗 <a href="https://github.com/SimDeveloper-cripto" target="_blank"> GitHub </a> </p>
+    </section>
+
+      <section class="section">
+        <h3>Download CV</h3>
+          <a class="btn" href="assets/CV_Simone_Catapano.pdf" download>📄 Download PDF </a>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="container">
+      <section class="section">
+        <center><h3>About Me</h3></center>
+        <p>🔭 Developing a <a href="https://github.com/SimDeveloper-cripto/Embedded-Domotic-System.git" target="_blank">Personal Domotic System</a> using Arduino Uno R4 WiFi and Raspberry Pi 4B (8GB).</p>
+        <p>🔭 There are some languages I'm learning and are&nbsp;&nbsp;
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/zig/zig-original.svg" alt="zig" width="25"> &nbsp;
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="25">
+        .</p>
+        <ul><strong>[Arduino Issue Solved]</strong><a href="https://gist.github.com/SimDeveloper-cripto/16fb43cddc9d0a4c6cb537e7f6b4913f">&nbsp;Uno R4 WiFI Firmware corrupted</a>.</ul>
+        </section>
+      <br />
+      <section class="section">
+        <center><h3>Main Projects</h3></center>
+        <ul>
+            <li><strong>[Java]</strong> <a href="https://github.com/SimDeveloper-cripto/E2EFragilityAnalyzer.git" target="_blank">E2EFragilityAnalyzer</a> – Bachelor's Thesis Project, an end-to-end test case fragility evaluator for web applications using Selenium. </li>
+            <li><strong>[C++ Library]</strong> <a href="https://github.com/SimDeveloper-cripto/lasd_libraries_v2.git" target="_blank">lasd_libraries_v2</a> – Directed Graph & Feed-Forward Neural Network trained on MNIST.</li>
+            <li><strong>[Python3 Library]</strong> <a href="https://github.com/SimDeveloper-cripto/neura_nova.git" target="_blank">neura_nova</a> – Neural Networks (FeedForward + CNN) with K-Fold Cross Validation & focus on Dataset Shifting.</li>
+            <li><strong>[Python3 Library]</strong> <a href="https://github.com/SimDeveloper-cripto/graphlib.git" target="_blank">graphlib</a> – Undirected Graph (by Adjacency Matrix).</li>
+        </ul>
+      </section>
+
+      <br />
+      <section class="learning-section section">
+        <center><h3>Frameworks and Tools Currently Learning</h3></center>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                    <th><center>Language</center></th>
+                    <th><center>Library / Tool</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>C</td>
+                    <td>OpenGL -- OpenMP -- MPI -- Raylib</td>
+                    </tr>
+                    <tr>
+                    <td>Javascript</td>
+                    <td>React -- React-Native</td>
+                    </tr>
+                    <tr>
+                    <td>Go</td>
+                    <td>Traefik -- Gorm -- Echo -- Fiber</td>
+                    </tr>
+                    <tr>
+                    <td>Python</td>
+                    <td>Tensorflow</td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+      </section>
+
+      <br />
+      <section class="skill-section">
+        <h3>Languages</h3>
+        <div class="icons">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Go">
+        </div>
+      </section>
+
+      <section class="skill-section">
+        <h3>Frameworks</h3>
+        <div class="icons">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
+          <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="40">
+        </div>
+      </section>
+
+      <section class="skill-section">
+        <h3>Tools</h3>
+        <div class="icons">
+          <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="Arduino">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker">
+          <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase">
+          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
+        </div>
+      </section>
+
+      <section class="skill-section">
+        <h3>Operating Systems</h3>
+        <div class="icons">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="Windows">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/debian/debian-original.svg" alt="Debian">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Ubuntu-logo-2022.svg" alt="Ubuntu">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024-2025 <strong> SimDeveloper-cripto </strong> - Simone Catapano</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
