@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono&display=swap');
-
 /* -------------------- GLOBAL RESET -------------------- */
 * {
   margin: 0;
@@ -7,31 +5,46 @@
   box-sizing: border-box;
 }
 
-/* -------------------- COLOR PALETTE -------------------- */
+/* -------------------- COLOR PALETTE (GitHub Theme) -------------------- */
 :root {
   /* Light Mode */
-  --primary: #6366f1;
-  --primary-light: #a5b4fc;
-  --bg: #f9fafb;
-  --text: #1f2937;
+  --bg: #ffffff;
+  --text: #24292f;
+  --link: #0969da;
+  --primary: #0969da;
+  /* For compatibility with existing HTML classes if any */
+  --border: #d0d7de;
   --card-bg: #ffffff;
-  --sidebar-bg: #f3f4f6;
-  --border: #e5e7eb;
+  --sidebar-bg: #f6f8fa;
+  --header-bg: #24292f;
+  --header-text: #ffffff;
+  --btn-bg: #2da44e;
+  --btn-hover: #2c974b;
+  --btn-text: #ffffff;
+  --code-bg: #f6f8fa;
 
   /* Dark Mode */
-  --dark-bg: #0f172a;
-  --dark-text: #f9fafb;
-  --dark-card-bg: #1e293b;
-  --dark-sidebar-bg: #1e293b;
-  --dark-border: #334155;
+  --dark-bg: #0d1117;
+  --dark-text: #c9d1d9;
+  --dark-link: #58a6ff;
+  --dark-border: #30363d;
+  --dark-card-bg: #0d1117;
+  /* Often transparent or same as bg in GitHub */
+  --dark-sidebar-bg: #161b22;
+  /* Slightly lighter for contrast */
+  --dark-header-bg: #161b22;
+  --dark-btn-bg: #238636;
+  --dark-btn-hover: #2ea043;
+  --dark-code-bg: #161b22;
 }
 
 /* -------------------- BASE STYLES -------------------- */
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 14px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -42,286 +55,406 @@ body.dark {
 
 /* -------------------- HEADER -------------------- */
 header {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-header .highlight {
-  color: #e0e7ff;
-  font-weight: 700;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-header h3 {
-  font-weight: 400;
-  margin-top: 0.5rem;
-  line-height: 1.4;
-  color: #f3f4f6;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* To separate content and toggle */
+  border-bottom: 1px solid var(--border);
 }
 
 body.dark header {
-  background: linear-gradient(135deg, #4338ca, #6366f1);
-  color: var(--dark-text);
+  background-color: var(--dark-header-bg);
+  border-bottom-color: var(--dark-border);
 }
 
-body.dark header .highlight {
-  color: var(--primary-light);
-  text-shadow: none;
+.header-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  text-align: left;
+  /* Align left like GitHub profile */
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: inherit;
+}
+
+header .highlight {
+  color: inherit;
+  font-weight: 600;
+}
+
+header h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8b949e;
+  /* Muted text */
+  margin-top: 0;
 }
 
 .views {
   position: absolute;
-  bottom: 10px;
-  right: 15px;
+  top: 10px;
+  right: 60px;
+  /* Space for theme toggle */
 }
 
 /* -------------------- THEME TOGGLE -------------------- */
 #theme-toggle {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  padding: 8px;
-  font-size: 18px;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  color: white;
+  transition: 0.2s;
 }
 
 #theme-toggle:hover {
-  background: #e5e7eb;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-body.dark #theme-toggle {
-  background: var(--dark-card-bg);
-  color: var(--dark-text);
-}
-
-body.dark #theme-toggle:hover {
-  background: #334155;
-}
-
-/* -------------------- MAIN CONTAINER -------------------- */
+/* -------------------- LAYOUT -------------------- */
 .main-container {
   display: flex;
-  gap: 20px;
-  max-width: 1300px;
-  margin: 20px auto;
-  padding: 20px;
+  flex-direction: row-reverse;
+  /* Put main content on left, sidebar on right? Github is Sidebar Left. Let's stick to HTML logical order or Flex to swap.
+                                  Actually, usually Sidebar is info (left), Main is content (right).
+                                  The HTML has: Sidebar then Main. So flex-direction: row is correct. */
+  flex-direction: row;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 24px auto;
+  padding: 0 24px;
+  align-items: flex-start;
 }
 
-/* -------------------- SIDEBAR -------------------- */
+/* Sidebar (Left in HTML) */
 .side-container {
-  flex: 0 0 42%;
-  background-color: var(--sidebar-bg);
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  transition: background 0.3s, color 0.3s, border 0.3s;
+  flex: 0 0 296px;
+  /* GitHub sidebar width approx */
+  font-size: 14px;
 }
 
-body.dark .side-container {
-  background: var(--dark-sidebar-bg);
-  color: var(--dark-text);
-  border-color: var(--dark-border);
-}
-
-/* -------------------- MAIN CONTENT -------------------- */
+/* Main Content (Right in HTML) */
 .container {
-  flex: 0 0 70%;
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border: 1px solid var(--border);
-  transition: background 0.3s, color 0.3s, border 0.3s;
+  flex: 1;
+  min-width: 0;
+  /* Prevent flex overflow */
 }
 
-body.dark .container {
-  background: var(--dark-card-bg);
-  color: var(--dark-text);
-  border-color: var(--dark-border);
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .side-container,
+  .container {
+    width: 100%;
+    flex: none;
+  }
 }
 
-/* -------------------- HEADERS -------------------- */
+/* -------------------- SECTIONS & CARDS -------------------- */
+.section {
+  margin-bottom: 16px;
+  /* Not making everything a card, but maybe some parts.
+     GitHub profiles are mostly clean with dividers. */
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+body.dark .section {
+  border-bottom-color: var(--dark-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+/* Remove default heavy borders/shadows from previous theme */
+.side-container,
+.container {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* -------------------- TYPOGRAPHY -------------------- */
 h3 {
-  color: var(--primary);
-  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
 }
 
 body.dark h3 {
-  color: var(--primary-light);
+  color: var(--dark-text);
 }
 
-/* -------------------- LINKS -------------------- */
+/* Center tags in HTML were common, but we should align left for GitHub style */
+center h3 {
+  text-align: left;
+}
+
+center {
+  text-align: left;
+  display: block;
+  /* Override center tag behavior */
+}
+
+p {
+  margin-bottom: 10px;
+}
+
 a {
-  color: var(--primary);
-  font-weight: 600;
+  color: var(--link);
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 400;
 }
 
 a:hover {
-  color: #818cf8;
+  text-decoration: underline;
 }
 
-body.dark a:hover {
-  color: var(--primary-light);
+body.dark a {
+  color: var(--dark-link);
 }
 
-/* -------------------- BUTTONS -------------------- */
+/* -------------------- ELEMENTS -------------------- */
+/* Buttons */
 .btn {
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: var(--primary);
-  color: white;
-  transition: background 0.3s;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  transition: .2s cubic-bezier(.3, 0, .5, 1);
+  text-decoration: none !important;
+  /* Override hover underline */
 }
 
 .btn:hover {
-  background: #818cf8;
+  background-color: var(--btn-hover);
+  border-color: rgba(27, 31, 35, 0.15);
 }
 
-/* -------------------- SECTIONS -------------------- */
-.section {
-  margin-bottom: 25px;
-  font-size: 1.05rem;
+body.dark .btn {
+  background-color: var(--dark-btn-bg);
+  border-color: rgba(240, 246, 252, 0.1);
 }
 
-.skill-section h3 {
-  border-bottom: 2px solid var(--primary);
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+body.dark .btn:hover {
+  background-color: var(--dark-btn-hover);
 }
 
-body.dark .skill-section h3 {
-  border-color: var(--primary-light);
-}
-
-/* -------------------- ICONS -------------------- */
-.icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-
-.icons img {
-  width: 40px;
-  height: 40px;
-  filter: grayscale(40%);
-  transition: transform 0.2s, filter 0.3s;
-}
-
-.icons img:hover {
-  transform: scale(1.15);
-  filter: grayscale(0%);
-}
-
-/* -------------------- EXAMS LIST -------------------- */
+/* Exams List */
 .exams {
   list-style: none;
-  padding: 15px 0;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 250px;
-  font-family: Arial, sans-serif;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  text-align: left;
 }
 
 .exams li {
-  display: block;
-  padding: 6px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--border);
+  font-size: 14px;
 }
 
 body.dark .exams li {
   border-bottom-color: var(--dark-border);
 }
 
-/* -------------------- SKILLS TABLE -------------------- */
+/* Skills Table (Markdown style) */
 .skills-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .skills-table th,
 .skills-table td {
+  padding: 6px 13px;
   border: 1px solid var(--border);
-  padding: 10px 15px;
-  text-align: left;
 }
 
-.skills-table th {
-  background-color: var(--sidebar-bg);
-  font-weight: bold;
-}
-
-.skills-table tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.skills-table tr:hover {
-  background-color: #eef2ff;
-}
-
-body.dark .skills-table th {
-  background: #334155;
-}
-
+body.dark .skills-table th,
 body.dark .skills-table td {
   border-color: var(--dark-border);
 }
 
-body.dark .skills-table tr:nth-child(even) {
-  background-color: #1e293b;
+.skills-table th {
+  font-weight: 600;
+  background-color: var(--sidebar-bg);
+  /* Use subtle gray */
 }
 
-body.dark .skills-table tr:hover {
-  background-color: #475569;
+body.dark .skills-table th {
+  background-color: var(--dark-sidebar-bg);
+}
+
+.skills-table tr:nth-child(2n) {
+  background-color: var(--sidebar-bg);
+}
+
+body.dark .skills-table tr:nth-child(2n) {
+  background-color: var(--dark-sidebar-bg);
+}
+
+/* Icons Grid */
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  /* Left align */
+}
+
+.icons img {
+  height: 32px;
+  /* Standard badge height */
+  width: auto;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.icons img:hover {
+  transform: scale(1.05);
+}
+
+/* Skill Sections */
+.skill-section {
+  margin-bottom: 24px;
+}
+
+.skill-section h3 {
+  border-bottom: none;
+  margin-bottom: 8px;
 }
 
 /* -------------------- FOOTER -------------------- */
 footer {
+  margin-top: 40px;
+  padding: 40px 0;
   text-align: center;
-  padding: 15px;
-  background: var(--primary);
-  color: white;
-  margin-top: 30px;
-  transition: background 0.3s, color 0.3s;
+  border-top: 1px solid var(--border);
+  color: #57606a;
+  background: transparent;
+  font-size: 12px;
 }
 
 body.dark footer {
-  background: var(--dark-card-bg);
-  color: var(--dark-text);
+  border-top-color: var(--dark-border);
+  color: #8b949e;
 }
 
-/* -------------------- MEDIA QUERIES -------------------- */
-@media (max-width: 900px) {
-  .main-container {
-    flex-direction: column;
-  }
-  .side-container,
-  .container {
-    flex: 1 1 100%;
-  }
+/* -------------------- REPO CARDS (Grid) -------------------- */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
 }
 
-/* -------------------- CODE BLOCKS -------------------- */
-.code, pre, code {
-  font-family: 'Ubuntu Mono', monospace;
+.repo-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body.dark .repo-card {
+  border-color: var(--dark-border);
+  background-color: var(--dark-card-bg);
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.repo-icon {
+  margin-right: 8px;
+  fill: #57606a;
+}
+
+body.dark .repo-icon {
+  fill: #8b949e;
+}
+
+.repo-desc {
+  font-size: 12px;
+  color: #57606a;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+body.dark .repo-desc {
+  color: #8b949e;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #57606a;
+}
+
+body.dark .repo-meta {
+  color: #8b949e;
+}
+
+.lang-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(27, 31, 35, 0.1);
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.lang-java {
+  background-color: #b07219;
+}
+
+.lang-cpp {
+  background-color: #f34b7d;
+}
+
+.lang-python {
+  background-color: #3572A5;
+}
+
+.lang-other {
+  background-color: #ededed;
 }
